@@ -1,144 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MicroFoundary Catalog</title>
-
-<!-- Universal Stylesheet -->
-<link rel="stylesheet" href="../universal.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Catalog</title>
 
 <style>
     body {
         background: #ffffff;
         margin: 0;
+        padding: 0;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
-    .header {
-        text-align: center;
-        padding: 30px 10px;
-    }
-
-    .header img {
-        width: 120px;
+    .logo {
+        width: 160px;
         height: auto;
-        border-radius: 12px;
-    }
-
-    .header h1 {
-        margin-top: 15px;
-        font-size: 28px;
-        font-weight: 600;
-    }
-
-    .catalog-container {
-        max-width: 650px;
-        margin: 0 auto;
-        padding: 20px;
-    }
-
-    .widget-block {
-        padding: 18px;
-        margin: 14px 0;
-        background: #f7f7f7;
-        border-radius: 10px;
-        border: 1px solid #e0e0e0;
-    }
-
-    .widget-block a {
-        text-decoration: none;
-        color: #000;
-        font-size: 20px;
-        font-weight: 600;
+        margin: 20px 0 10px 20px; /* left aligned */
         display: block;
-        margin-bottom: 6px;
     }
 
-    .widget-desc {
-        font-size: 16px;
-        color: #333;
-        line-height: 1.4;
+    h1 {
+        font-size: 32px;
+        font-weight: 600;
+        margin: 0 0 25px 20px; /* left aligned */
+        text-align: left;
     }
 
-    .mf-button {
-        display: inline-block;
-        margin-top: 30px;
-        padding: 14px 22px;
-        background: #000;
-        color: #fff;
-        border-radius: 10px;
+    .catalog-item {
+        margin: 0 0 25px 20px; /* left aligned */
+    }
+
+    .catalog-item a {
+        font-size: 22px;
+        color: #007aff;
         text-decoration: none;
-        font-size: 18px;
         font-weight: 600;
     }
 
-    .mf-button:hover {
-        background: #333;
+    .catalog-item a:active {
+        color: #005bbb;
+    }
+
+    .desc {
+        font-size: 18px;
+        margin-top: 4px;
+        color: #333;
     }
 </style>
 </head>
 
 <body>
 
-<div class="header">
-    <img src="../IMG_1741.jpg" alt="MicroFoundary Logo">
-    <h1>MicroFoundary Catalog</h1>
+<img src="IMG_1741.jpeg" alt="MicroFoundary Logo" class="logo" />
+
+<h1>Catalog</h1>
+
+<!-- Widget List -->
+<div class="catalog-item">
+    <a href="../Clarifier/index.html">Clarifier</a>
+    <div class="desc">Turns messy text into clean, structured output.</div>
 </div>
 
-<div class="catalog-container">
+<div class="catalog-item">
+    <a href="../StarterWidget/index.html">StarterWidget</a>
+    <div class="desc">A basic template for building new MicroFoundary widgets.</div>
+</div>
 
-    <div class="widget-block">
-        <a href="../Clarifier/index.html">Clarifier</a>
-        <div class="widget-desc">Breaks down complex text into clear, simple explanations.</div>
-    </div>
+<div class="catalog-item">
+    <a href="../QuickCounter/index.html">QuickCounter</a>
+    <div class="desc">A simple tap‑to‑increment counter for quick tallies.</div>
+</div>
 
-    <div class="widget-block">
-        <a href="../StarterWidget/index.html">Starter Widget</a>
-        <div class="widget-desc">A base template for building new MicroFoundary tools.</div>
-    </div>
+<div class="catalog-item">
+    <a href="../PulseCounter/index.html">PulseCounter</a>
+    <div class="desc">Counts rapid taps for pulse or frequency measurements.</div>
+</div>
 
-    <div class="widget-block">
-        <a href="../Quick-counter/index.html">Quick Counter</a>
-        <div class="widget-desc">Tap to count anything instantly — simple and fast.</div>
-    </div>
+<div class="catalog-item">
+    <a href="../AutoFormatter/index.html">AutoFormatter</a>
+    <div class="desc">Automatically formats text into clean, readable structure.</div>
+</div>
 
-    <div class="widget-block">
-        <a href="../PulseCounter/index.html">Pulse Counter</a>
-        <div class="widget-desc">Counts rapid taps for pulse checks or fast measurements.</div>
-    </div>
+<div class="catalog-item">
+    <a href="../AutoWriter/index.html">AutoWriter</a>
+    <div class="desc">Generates short text snippets based on your input.</div>
+</div>
 
-    <div class="widget-block">
-        <a href="../AutoFormatter/index.html">Auto Formatter</a>
-        <div class="widget-desc">Automatically formats text into clean, structured output.</div>
-    </div>
+<div class="catalog-item">
+    <a href="../MicroNote/index.html">MicroNote</a>
+    <div class="desc">A tiny notepad for quick notes and reminders.</div>
+</div>
 
-    <div class="widget-block">
-        <a href="../AutoWriter/index.html">Auto Writer</a>
-        <div class="widget-desc">Generates short written content from quick prompts.</div>
-    </div>
+<div class="catalog-item">
+    <a href="../TimeStampTool/index.html">TimeStampTool</a>
+    <div class="desc">Creates clean timestamps for logging or documentation.</div>
+</div>
 
-    <div class="widget-block">
-        <a href="../MicroNote/index.html">Micro Note</a>
-        <div class="widget-desc">A tiny, instant note pad for quick thoughts.</div>
-    </div>
+<div class="catalog-item">
+    <a href="../MicroTimer/index.html">MicroTimer</a>
+    <div class="desc">A lightweight timer for short tasks and intervals.</div>
+</div>
 
-    <div class="widget-block">
-        <a href="../TimeStampTool/index.html">Timestamp Tool</a>
-        <div class="widget-desc">Creates clean timestamps with one tap.</div>
-    </div>
-
-    <div class="widget-block">
-        <a href="../MicroTimer/index.html">Micro Timer</a>
-        <div class="widget-desc">A simple tap‑to‑start timer for short tasks.</div>
-    </div>
-
-    <div class="widget-block">
-        <a href="../MicroCopy/index.html">Micro Copy</a>
-        <div class="widget-desc">Instantly copies text to your clipboard with one tap.</div>
-    </div>
-
-    <a class="mf-button" href="../index.html">Back to Main</a>
+<div class="catalog-item">
+    <a href="../MicroCopy/index.html">MicroCopy</a>
+    <div class="desc">Copies preset text snippets with a single tap.</div>
 </div>
 
 </body>
