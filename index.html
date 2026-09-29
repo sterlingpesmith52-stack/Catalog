@@ -107,5 +107,35 @@
     <div class="desc">Copies preset text snippets with a single tap.</div>
 </div>
 
+<!-- Logging Logic -->
+<script>
+    function detectDevice() {
+        const ua = navigator.userAgent;
+        if (/iPhone/i.test(ua)) return "iPhone";
+        if (/iPad/i.test(ua)) return "iPad";
+        if (/Android/i.test(ua)) return "Android";
+        if (/Mac/i.test(ua)) return "Mac";
+        if (/Windows/i.test(ua)) return "Windows";
+        return "Unknown";
+    }
+
+    function logCatalogHit() {
+        const payload = {
+            page: "Catalog",
+            tool: "CatalogPage",
+            timestamp: new Date().toISOString(),
+            device: detectDevice()
+        };
+
+        fetch("https://webhook.site/YOUR-UNIQUE-URL-HERE", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+    }
+
+    window.onload = logCatalogHit;
+</script>
+
 </body>
 </html>
