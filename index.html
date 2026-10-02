@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,38 +31,46 @@
         margin: 0 0 25px 20px;
     }
 
-    .catalog-item a {
+    /* Row containing name + Buy button */
+    .item-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 20px; /* matches left margin */
+    }
+
+    .item-row a.name-link {
         font-size: 22px;
         color: #007aff;
         text-decoration: none;
         font-weight: 600;
     }
 
-    .catalog-item a:active {
+    .item-row a.name-link:active {
         color: #005bbb;
-    }
-
-    .desc {
-        font-size: 18px;
-        margin-top: 4px;
-        color: #333;
     }
 
     /* BUY BUTTON */
     .buy-btn {
-        display: inline-block;
-        margin-top: 8px;
-        padding: 8px 16px;
+        padding: 6px 14px;
         background: #007aff;
         color: #ffffff;
         font-size: 18px;
         font-weight: 600;
         border-radius: 8px;
         text-decoration: none;
+        white-space: nowrap;
     }
 
     .buy-btn:active {
         background: #005bbb;
+    }
+
+    .desc {
+        font-size: 18px;
+        margin-top: 6px;
+        color: #333;
+        padding-right: 20px;
     }
 </style>
 </head>
@@ -76,63 +83,83 @@
 
 <!-- Widget List -->
 <div class="catalog-item">
-    <a href="../Clarifier/index.html">Clarifier</a>
+    <div class="item-row">
+        <a href="../Clarifier/index.html" class="name-link">Clarifier</a>
+        <a href="../Prices/index.html" class="buy-btn">Buy</a>
+    </div>
     <div class="desc">Turns messy text into clean, structured output.</div>
-    <a href="../Prices/index.html" class="buy-btn">Buy</a>
 </div>
 
 <div class="catalog-item">
-    <a href="../StarterWidget/index.html">StarterWidget</a>
+    <div class="item-row">
+        <a href="../StarterWidget/index.html" class="name-link">StarterWidget</a>
+        <a href="../Prices/index.html" class="buy-btn">Buy</a>
+    </div>
     <div class="desc">A basic template for building new MicroFoundary widgets.</div>
-    <a href="../Prices/index.html" class="buy-btn">Buy</a>
 </div>
 
 <div class="catalog-item">
-    <a href="../QuickCounter/index.html">QuickCounter</a>
+    <div class="item-row">
+        <a href="../QuickCounter/index.html" class="name-link">QuickCounter</a>
+        <a href="../Prices/index.html" class="buy-btn">Buy</a>
+    </div>
     <div class="desc">A simple tap‑to‑increment counter for quick tallies.</div>
-    <a href="../Prices/index.html" class="buy-btn">Buy</a>
 </div>
 
 <div class="catalog-item">
-    <a href="../PulseCounter/index.html">PulseCounter</a>
+    <div class="item-row">
+        <a href="../PulseCounter/index.html" class="name-link">PulseCounter</a>
+        <a href="../Prices/index.html" class="buy-btn">Buy</a>
+    </div>
     <div class="desc">Counts rapid taps for pulse or frequency measurements.</div>
-    <a href="../Prices/index.html" class="buy-btn">Buy</a>
 </div>
 
 <div class="catalog-item">
-    <a href="../AutoFormatter/index.html">AutoFormatter</a>
+    <div class="item-row">
+        <a href="../AutoFormatter/index.html" class="name-link">AutoFormatter</a>
+        <a href="../Prices/index.html" class="buy-btn">Buy</a>
+    </div>
     <div class="desc">Automatically formats text into clean, readable structure.</div>
-    <a href="../Prices/index.html" class="buy-btn">Buy</a>
 </div>
 
 <div class="catalog-item">
-    <a href="../AutoWriter/index.html">AutoWriter</a>
+    <div class="item-row">
+        <a href="../AutoWriter/index.html" class="name-link">AutoWriter</a>
+        <a href="../Prices/index.html" class="buy-btn">Buy</a>
+    </div>
     <div class="desc">Generates short text snippets based on your input.</div>
-    <a href="../Prices/index.html" class="buy-btn">Buy</a>
 </div>
 
 <div class="catalog-item">
-    <a href="../MicroNote/index.html">MicroNote</a>
+    <div class="item-row">
+        <a href="../MicroNote/index.html" class="name-link">MicroNote</a>
+        <a href="../Prices/index.html" class="buy-btn">Buy</a>
+    </div>
     <div class="desc">A tiny notepad for quick notes and reminders.</div>
-    <a href="../Prices/index.html" class="buy-btn">Buy</a>
 </div>
 
 <div class="catalog-item">
-    <a href="../TimeStampTool/index.html">TimeStampTool</a>
+    <div class="item-row">
+        <a href="../TimeStampTool/index.html" class="name-link">TimeStampTool</a>
+        <a href="../Prices/index.html" class="buy-btn">Buy</a>
+    </div>
     <div class="desc">Creates clean timestamps for logging or documentation.</div>
-    <a href="../Prices/index.html" class="buy-btn">Buy</a>
 </div>
 
 <div class="catalog-item">
-    <a href="../MicroTimer/index.html">MicroTimer</a>
+    <div class="item-row">
+        <a href="../MicroTimer/index.html" class="name-link">MicroTimer</a>
+        <a href="../Prices/index.html" class="buy-btn">Buy</a>
+    </div>
     <div class="desc">A lightweight timer for short tasks and intervals.</div>
-    <a href="../Prices/index.html" class="buy-btn">Buy</a>
 </div>
 
 <div class="catalog-item">
-    <a href="../MicroCopy/index.html">MicroCopy</a>
+    <div class="item-row">
+        <a href="../MicroCopy/index.html" class="name-link">MicroCopy</a>
+        <a href="../Prices/index.html" class="buy-btn">Buy</a>
+    </div>
     <div class="desc">Copies preset text snippets with a single tap.</div>
-    <a href="../Prices/index.html" class="buy-btn">Buy</a>
 </div>
 
 <!-- Logging Logic -->
