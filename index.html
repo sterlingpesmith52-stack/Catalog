@@ -1,195 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Catalog</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decider</title>
 
 <style>
-    body {
-        background: #ffffff;
-        margin: 0;
-        padding: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    }
+* {
+    box-sizing: border-box;
+}
 
-    .logo {
-        width: 160px;
-        height: auto;
-        margin: 20px 0 10px 20px;
-        display: block;
-    }
+body {
+    margin: 0;
+    padding: 20px;
+    padding-bottom: 90px;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #000;
+}
 
-    h1 {
-        font-size: 32px;
-        font-weight: 600;
-        margin: 0 0 25px 20px;
-        text-align: left;
-    }
+.logo {
+    width: 70px;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
 
-    .catalog-item {
-        margin: 0 0 25px 20px;
-    }
+h1 {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0 0 25px 20px;
+    text-align: left;
+}
 
-    /* Row containing name + Buy button */
-    .item-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-right: 20px; /* matches left margin */
-    }
+.tagline {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 25px;
+}
 
-    .item-row a.name-link {
-        font-size: 22px;
-        color: #007aff;
-        text-decoration: none;
-        font-weight: 600;
-    }
+.label {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
 
-    .item-row a.name-link:active {
-        color: #005bbb;
-    }
+textarea {
+    width: 100%;
+    min-height: 180px;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: vertical;
+}
 
-    /* BUY BUTTON */
-    .buy-btn {
-        padding: 6px 14px;
-        background: #007aff;
-        color: #ffffff;
-        font-size: 18px;
-        font-weight: 600;
-        border-radius: 8px;
-        text-decoration: none;
-        white-space: nowrap;
-    }
+.button-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    margin-bottom: 24px;
+}
 
-    .buy-btn:active {
-        background: #005bbb;
-    }
+button {
+    width: auto;
+    padding: 6px 12px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+}
 
-    .desc {
-        font-size: 18px;
-        margin-top: 6px;
-        color: #333;
-        padding-right: 20px;
-    }
+.primary-button {
+    background: #fff;
+    color: #000;
+    border: 2px solid #2563eb;
+}
+
+.secondary-button {
+    background: #000;
+    color: #fff;
+    border: 2px solid #000;
+}
+
+.result-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 18px;
+}
+
+.result-label {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.result-placeholder {
+    font-size: 15px;
+    color: #777;
+}
+
+.result-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #000;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    padding: 12px;
+}
+
+.buy-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    background: #000;
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+}
 </style>
 </head>
 
 <body>
 
-<img src="IMG_1741.jpeg" alt="MicroFoundary Logo" class="logo" />
+IMG_1741.jpeg
 
-<h1>Catalog</h1>
+<h1>Decider</h1>
 
-<!-- Widget List -->
-<div class="catalog-item">
-    <div class="item-row">
-        <a href="../Clarifier/index.html" class="name-link">Clarifier</a>
-        <a href="../Prices/index.html" class="buy-btn">Buy</a>
-    </div>
-    <div class="desc">Turns messy text into clean, structured output.</div>
+<div class="tagline">
+    Can't agree? Let Decider choose.
 </div>
 
-<div class="catalog-item">
-    <div class="item-row">
-        <a href="../StarterWidget/index.html" class="name-link">StarterWidget</a>
-        <a href="../Prices/index.html" class="buy-btn">Buy</a>
-    </div>
-    <div class="desc">A basic template for building new MicroFoundary widgets.</div>
+<div class="label">
+    What are you choosing between?
 </div>
 
-<div class="catalog-item">
-    <div class="item-row">
-        <a href="../QuickCounter/index.html" class="name-link">QuickCounter</a>
-        <a href="../Prices/index.html" class="buy-btn">Buy</a>
-    </div>
-    <div class="desc">A simple tap‑to‑increment counter for quick tallies.</div>
+<textarea id="choices" placeholder="Pizza
+Mexican
+Chinese
+Burgers"></textarea>
+
+<div class="button-row">
+    <button class="primary-button" onclick="chooseForMe()">
+        Choose For Me
+    </button>
+
+    <button class="secondary-button" onclick="clearChoices()">
+        Clear
+    </button>
 </div>
 
-<div class="catalog-item">
-    <div class="item-row">
-        <a href="../PulseCounter/index.html" class="name-link">PulseCounter</a>
-        <a href="../Prices/index.html" class="buy-btn">Buy</a>
+<div class="result-card">
+    <div class="result-label">My Choice</div>
+
+    <div id="result" class="result-placeholder">
+        —
     </div>
-    <div class="desc">Counts rapid taps for pulse or frequency measurements.</div>
 </div>
 
-<div class="catalog-item">
-    <div class="item-row">
-        <a href="../AutoFormatter/index.html" class="name-link">AutoFormatter</a>
-        <a href="../Prices/index.html" class="buy-btn">Buy</a>
-    </div>
-    <div class="desc">Automatically formats text into clean, readable structure.</div>
+<div class="footer">
+    YOUR_PURCHASE_URL
+        Buy This Tool
+    </a>
 </div>
 
-<div class="catalog-item">
-    <div class="item-row">
-        <a href="../AutoWriter/index.html" class="name-link">AutoWriter</a>
-        <a href="../Prices/index.html" class="buy-btn">Buy</a>
-    </div>
-    <div class="desc">Generates short text snippets based on your input.</div>
-</div>
-
-<div class="catalog-item">
-    <div class="item-row">
-        <a href="../MicroNote/index.html" class="name-link">MicroNote</a>
-        <a href="../Prices/index.html" class="buy-btn">Buy</a>
-    </div>
-    <div class="desc">A tiny notepad for quick notes and reminders.</div>
-</div>
-
-<div class="catalog-item">
-    <div class="item-row">
-        <a href="../TimeStampTool/index.html" class="name-link">TimeStampTool</a>
-        <a href="../Prices/index.html" class="buy-btn">Buy</a>
-    </div>
-    <div class="desc">Creates clean timestamps for logging or documentation.</div>
-</div>
-
-<div class="catalog-item">
-    <div class="item-row">
-        <a href="../MicroTimer/index.html" class="name-link">MicroTimer</a>
-        <a href="../Prices/index.html" class="buy-btn">Buy</a>
-    </div>
-    <div class="desc">A lightweight timer for short tasks and intervals.</div>
-</div>
-
-<div class="catalog-item">
-    <div class="item-row">
-        <a href="../MicroCopy/index.html" class="name-link">MicroCopy</a>
-        <a href="../Prices/index.html" class="buy-btn">Buy</a>
-    </div>
-    <div class="desc">Copies preset text snippets with a single tap.</div>
-</div>
-
-<!-- Logging Logic -->
 <script>
-    function detectDevice() {
-        const ua = navigator.userAgent;
-        if (/iPhone/i.test(ua)) return "iPhone";
-        if (/iPad/i.test(ua)) return "iPad";
-        if (/Android/i.test(ua)) return "Android";
-        if (/Mac/i.test(ua)) return "Mac";
-        if (/Windows/i.test(ua)) return "Windows";
-        return "Unknown";
+function chooseForMe() {
+    const text = document.getElementById('choices').value;
+
+    const choices = text
+        .split('\n')
+        .map(choice => choice.trim())
+        .filter(choice => choice.length > 0);
+
+    if (choices.length < 2) {
+        document.getElementById('result').className = 'result-placeholder';
+        document.getElementById('result').textContent =
+            'Enter at least two choices.';
+        return;
     }
 
-    function logCatalogHit() {
-        const payload = {
-            page: "Catalog",
-            tool: "CatalogPage",
-            timestamp: new Date().toISOString(),
-            device: detectDevice()
-        };
+    const randomIndex = Math.floor(Math.random() * choices.length);
 
-        fetch("https://webhook.site/b6edb181-a79e-49b3-a27e-da06eb493756", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-        });
-    }
+    document.getElementById('result').className = 'result-value';
+    document.getElementById('result').textContent =
+        choices[randomIndex];
+}
 
-    window.onload = logCatalogHit;
+function clearChoices() {
+    document.getElementById('choices').value = '';
+
+    document.getElementById('result').className = 'result-placeholder';
+    document.getElementById('result').textContent = '—';
+}
 </script>
 
 </body>
